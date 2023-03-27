@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.getCategoriesButton = new System.Windows.Forms.Button();
             this.catalogCategoriesTreeView = new System.Windows.Forms.TreeView();
             this.fullSyncXmlButton = new System.Windows.Forms.Button();
@@ -55,8 +57,7 @@
             this.hurtonApiKeyBox = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.infoBox = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.checkBoxOnlyUpdateExistProducts = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.checkBoxOnlyUpdateExistProducts);
             this.tabPage1.Controls.Add(this.progressBar1);
             this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Controls.Add(this.getCategoriesButton);
@@ -91,6 +93,21 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Główna";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(31, 366);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(726, 23);
+            this.progressBar1.TabIndex = 9;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(31, 234);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(328, 126);
+            this.richTextBox1.TabIndex = 8;
+            this.richTextBox1.Text = "";
             // 
             // getCategoriesButton
             // 
@@ -113,7 +130,7 @@
             // 
             // fullSyncXmlButton
             // 
-            this.fullSyncXmlButton.Location = new System.Drawing.Point(31, 200);
+            this.fullSyncXmlButton.Location = new System.Drawing.Point(31, 177);
             this.fullSyncXmlButton.Name = "fullSyncXmlButton";
             this.fullSyncXmlButton.Size = new System.Drawing.Size(328, 28);
             this.fullSyncXmlButton.TabIndex = 3;
@@ -323,24 +340,20 @@
             // 
             this.infoBox.Location = new System.Drawing.Point(4, 427);
             this.infoBox.Name = "infoBox";
-            this.infoBox.Size = new System.Drawing.Size(520, 20);
+            this.infoBox.Size = new System.Drawing.Size(792, 20);
             this.infoBox.TabIndex = 1;
             this.infoBox.Text = "Przykladowy tekst :)";
             // 
-            // richTextBox1
+            // checkBoxOnlyUpdateExistProducts
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(31, 234);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(328, 126);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(31, 366);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(726, 23);
-            this.progressBar1.TabIndex = 9;
+            this.checkBoxOnlyUpdateExistProducts.AutoSize = true;
+            this.checkBoxOnlyUpdateExistProducts.Location = new System.Drawing.Point(31, 211);
+            this.checkBoxOnlyUpdateExistProducts.Name = "checkBoxOnlyUpdateExistProducts";
+            this.checkBoxOnlyUpdateExistProducts.Size = new System.Drawing.Size(190, 17);
+            this.checkBoxOnlyUpdateExistProducts.TabIndex = 10;
+            this.checkBoxOnlyUpdateExistProducts.Text = "Tylko aktualizuj istniejące produkty";
+            this.checkBoxOnlyUpdateExistProducts.UseVisualStyleBackColor = true;
+            this.checkBoxOnlyUpdateExistProducts.CheckedChanged += new System.EventHandler(this.checkBoxOnlyUpdateExistProducts_CheckedChanged);
             // 
             // Form1
             // 
@@ -395,6 +408,7 @@
         private System.Windows.Forms.Button getCategoriesButton;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.CheckBox checkBoxOnlyUpdateExistProducts;
     }
 }
 

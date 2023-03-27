@@ -35,6 +35,8 @@ namespace HurtonToSubiektDesktop
             var test = Properties.Settings.Default;
             Console.WriteLine(test);
 
+            //tabControl1.TabPages[0].Enabled = false;
+
 
         }
 
@@ -225,8 +227,6 @@ namespace HurtonToSubiektDesktop
                     }
                 }
 
-                
-
             }
         }
 
@@ -253,6 +253,7 @@ namespace HurtonToSubiektDesktop
             string suffix = " (Czekaj)";
 
             fullSyncXmlButton.Enabled = false;
+            checkBoxOnlyUpdateExistProducts.Enabled = false;
 
             fullSyncXmlButton.Text += suffix;
 
@@ -289,6 +290,8 @@ namespace HurtonToSubiektDesktop
             {
                 fullSyncXmlButton.Enabled = true;
                 fullSyncXmlButton.Text = fullSyncXmlButton.Text.Replace(suffix, "");
+
+                checkBoxOnlyUpdateExistProducts.Enabled = true;
             };
 
             worker.RunWorkerAsync();
@@ -407,7 +410,9 @@ namespace HurtonToSubiektDesktop
             Console.WriteLine("click");
         }
 
-
-
+        private void checkBoxOnlyUpdateExistProducts_CheckedChanged(object sender, EventArgs e)
+        {
+            Syncs.OnlyUpdateExists = checkBoxOnlyUpdateExistProducts.Checked;
+        }
     }
 }

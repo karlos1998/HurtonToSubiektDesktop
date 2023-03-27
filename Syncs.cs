@@ -39,6 +39,8 @@ namespace HurtonToSubiektDesktop
 
         public static bool syncInProgres = false;
 
+        public static bool OnlyUpdateExists = false;
+
         public async static void FullUpdate()
         {
 
